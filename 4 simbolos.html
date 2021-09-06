@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-widht, initial-scale=1.0">
+   <title>Ejercicio 514</title>
+</head>
+<body>
+   <canvas id="lineas" width="600px" height="400px" style="border: 2px solid gray;"></canvas>
+
+
+   <script>
+     window.addEventListener('load', () => {
+       let canvasLineas = document.getElementById('lineas');
+       let ctx = canvasLineas.getContext('2d');
+
+
+        ctx.fillRect(425, 25, 100, 100);
+        ctx.clearRect(445, 45, 60, 60);
+        ctx.strokeRect(450, 50, 50, 50);
+
+        ctx.beginPath();
+        ctx.arc(205, 75, 50, 0, Math.PI * 2, true); // Outer circle
+        ctx.moveTo(240, 75);
+        ctx.arc(205, 75, 35, 0, Math.PI, false);  // Mouth (clockwise)
+        ctx.moveTo(195, 65);
+        ctx.arc(190, 65, 5, 0, Math.PI * 2, true);  // Left eye
+        ctx.moveTo(225, 65);
+        ctx.arc(220, 65, 5, 0, Math.PI * 2, true);  // Right eye
+        ctx.stroke()
+
+     ctx.beginPath();
+    ctx.moveTo(300, 25);
+    ctx.lineTo(380, 25);
+    ctx.lineTo(300, 105);
+    ctx.fill();
+
+    // Stroked triangle
+    ctx.beginPath();
+    ctx.moveTo(400, 125);
+    ctx.lineTo(400, 45);
+    ctx.lineTo(320, 125);
+    ctx.closePath();
+    ctx.stroke();
+
+ 
+    ctx.beginPath();
+    ctx.moveTo(75, 40);
+    ctx.bezierCurveTo(75, 37, 70, 25, 50, 25);
+    ctx.bezierCurveTo(20, 25, 20, 62.5, 20, 62.5);
+    ctx.bezierCurveTo(20, 80, 40, 102, 75, 120);
+    ctx.bezierCurveTo(110, 102, 130, 80, 130, 62.5);
+    ctx.bezierCurveTo(130, 62.5, 130, 25, 100, 25);
+    ctx.bezierCurveTo(85, 25, 75, 37, 75, 40);
+    ctx.fill();
+
+     });
+  </script>  
+</body>
+</html>
